@@ -32,11 +32,35 @@ async function loadTasks() {
   tasks.forEach(displayTask); // Render all tasks
 }
 
+// Function to display a task in the list
 function displayTask(task) {
   const taskList = document.getElementById("task-list");
   const listItem = document.createElement("li");
   listItem.textContent = task.text;
+  listItem.dataset.id = task.id; // Add data-id attribute for identification
+
+  // Create a delete button for each task
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", async () => {
+    await deleteTask(task.id); // Call deleteTask function
+    taskList.removeChild(listItem); // Remove from the DOM
+  });
+
+  listItem.appendChild(deleteButton);
   taskList.appendChild(listItem);
 }
 
+// Function to delete a task from the server
+async function deleteTask(id) {
+  const response = await fetch(`/tasks/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    console.error("Failed to delete task with id", id);
+  }
+}
+
+// Load tasks when the page loads
 loadTasks();

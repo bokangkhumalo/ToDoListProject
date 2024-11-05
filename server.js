@@ -1,42 +1,47 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const PORT = 3000;
 
 app.use(express.json()); // Middleware to parse JSON data
-app.use(express.static('public')); // Serve static files from public folder
+app.use(express.static("public")); // Serve static files from public folder
 
 // In-memory tasks array
 let tasks = [];
 
 // Endpoint to get all tasks
-app.get('/tasks', (req, res) => {
+app.get("/tasks", (req, res) => {
   res.json(tasks);
 });
 
 // Endpoint to add a new task
-app.post('/tasks', (req, res) => {
+app.post("/tasks", (req, res) => {
   const task = req.body;
   tasks.push(task);
   res.status(201).json(task);
 });
 
 // Endpoint to update a task
-app.put('/tasks/:id', (req, res) => {
+app.put("/tasks/:id", (req, res) => {
   const { id } = req.params;
   const task = tasks.find((t) => t.id === id);
   if (task) {
     Object.assign(task, req.body);
     res.json(task);
   } else {
-    res.status(404).json({ error: 'Task not found' });
+    res.status(404).json({ error: "Task not found" });
   }
 });
 
 // Endpoint to delete a task
-app.delete('/tasks/:id', (req, res) => {
+app.delete("/tasks/:id", (req, res) => {
   const { id } = req.params;
-  tasks = tasks.filter((t) => t.id !== id);
-  res.status(204).send();
+  const taskIndex = tasks.findIndex((t) => t.id === id);
+  if (taskIndex !== -1) {
+    tasks.splice(taskIndex, 1); // Remove task from array
+    res.status(204).send(); // Send no content status
+  } else {
+    res.status(404).json({ error: "Task not found" });
+  }
 });
 
 app.listen(PORT, () => {

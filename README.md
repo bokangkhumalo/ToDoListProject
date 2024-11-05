@@ -8,15 +8,20 @@ A simple to-do list application to add, remove, and mark tasks as completed. Thi
 
 ## 🛠️ Built With
 
-This website was built using the following technologies:
+This project was built using the following front end technologies:
 
 - **HTML5**: Structuring the content.
 - **CSS3**: Styling and layout design.
 - **Visual Studio Code**: Primary code editor.
 
 ##  Resources
-- JavaScript ES6 Tutorial
-- Node.js Introduction
+
+This project was built using the following back-end technologies:
+
+- JavaScript ES6
+- Node.js
+- JSON
+- NPM modules
   
 ## 🌟 Features
 

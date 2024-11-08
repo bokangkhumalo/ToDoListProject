@@ -1,15 +1,21 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
 }
 
 #app {
   max-width: 500px;
   margin: 50px auto;
   padding: 20px;
-  background: #fff;
+  background: #192e39;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px #000000;
 }
 
 ul {
@@ -44,7 +50,7 @@ button {
 
 .card {
   flex: 1;
-  background: #fff;
+  background: #b0b1b1;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

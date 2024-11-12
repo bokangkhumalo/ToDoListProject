@@ -82,7 +82,7 @@ input[type="text"] {
 }
 
 button#add-task {
-  border-radius: 20px;
+  border-radius: 14px;
   padding: 8px 15px;
   margin-left: -2px;
   background: linear-gradient(135deg, #4adede, #1aa7ec);

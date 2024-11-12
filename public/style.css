@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   color: #000000;
-  background-color: #ffffff;
+  background-color: white;
 }
 
 h1 {
@@ -10,11 +10,11 @@ h1 {
 }
 
 #app {
-  max-width: 500px;
+  max-width: 1000px;
   margin: 50px auto;
   padding: 20px;
-  background: #192e39;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #1ca7ec, #1f2f98);
+  border-radius: 24px;
   box-shadow: 0 0 10px #000000;
 }
 
@@ -22,9 +22,10 @@ ul {
   list-style-type: none;
 }
 
-.completed {
+.card .task-list {
   text-decoration: line-through;
   color: #888;
+  opacity: 0.8;
 }
 
 li {
@@ -50,16 +51,16 @@ button {
 
 .card {
   flex: 1;
-  background: #b0b1b1;
-  border-radius: 8px;
+  background: #d4d4d4;
+  border-radius: 14px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
   margin-top: 0;
-  color: #333;
-  border-bottom: 2px solid #eee;
+  text-align: center;
+  border-bottom: 2px solid #1ca7ec;
   padding-bottom: 10px;
 }
 
@@ -70,4 +71,22 @@ button {
 
 .input-container {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+input[type="text"] {
+  border-radius: 14px;
+  padding: 8px 15px;
+}
+
+button#add-task {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-left: -2px;
+  background: linear-gradient(135deg, #4adede, #1aa7ec);
+  color: white;
+  border: none;
+  cursor: pointer;
 }

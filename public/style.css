@@ -23,7 +23,6 @@ ul {
 }
 
 .card .task-list {
-  text-decoration: line-through;
   color: #888;
   opacity: 0.8;
 }
@@ -89,4 +88,26 @@ button#add-task {
   color: white;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button#add-task:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff0000);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

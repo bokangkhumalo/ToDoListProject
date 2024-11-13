@@ -1,17 +1,153 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  color: #000000;
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
 }
 
 #app {
-  max-width: 500px;
+  max-width: 1000px;
   margin: 50px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1ca7ec, #1f2f98);
+  border-radius: 24px;
+  box-shadow: 0 0 10px #000000;
 }
 
 ul {
   list-style-type: none;
+}
+
+.card .task-list {
+  color: #888;
+  opacity: 0.8;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+button {
+  margin-left: auto;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  flex: 1;
+  background: #d4d4d4;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin-top: 0;
+  text-align: center;
+  border-bottom: 2px solid #1ca7ec;
+  padding-bottom: 10px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.input-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+input[type="text"] {
+  border-radius: 14px;
+  padding: 8px 15px;
+}
+
+button#add-task {
+  border-radius: 14px;
+  padding: 8px 15px;
+  margin-left: -2px;
+  background: linear-gradient(135deg, #4adede, #1aa7ec);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button#add-task:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff0000);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  #app {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .input-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  input[type="text"] {
+    width: 90%;
+  }
+
+  button#add-task {
+    margin-left: 0;
+    width: 90%;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  li {
+    padding: 8px;
+    flex-wrap: wrap;
+  }
+
+  .delete-btn {
+    margin-top: 5px;
+  }
 }
